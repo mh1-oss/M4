@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مراجعة اللغة العربية لـ مرام | 2026</title>
+    <style>
+        :root {
+            --primary-color: #008080; /* Teal/Turquoise */
+            --secondary-color: #004d4d;
+            --accent-color: #ffcc00;
+            --bg-color: #f4fcfc;
+            --text-color: #2c3e50;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .dedication {
+            background-color: rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-weight: bold;
+            border: 1px dashed white;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            overflow-x: auto;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            scrollbar-width: none;
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            background-color: rgba(0, 128, 128, 0.05);
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin: 25px 0 15px 0;
+            border-right: 4px solid var(--primary-color);
+            padding-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,128,128,0.1);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-box {
+            background-color: #f0fdfa;
+            border-right: 4px solid var(--primary-color);
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .info-box.danger {
+            background-color: #fef2f2;
+            border-right-color: #ef4444;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 4px;
+            background-color: var(--primary-color);
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .badge.accent {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        .question {
+            font-weight: bold;
+            color: var(--secondary-color);
+            background: #fffbeb;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #f59e0b;
+            margin-bottom: 10px;
+        }
+
+        .answer {
+            padding: 10px;
+            border-right: 2px solid #10b981;
+            margin-bottom: 15px;
+            background: #f0fdf4;
+            border-radius: 0 6px 6px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 0.9rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>المراجعة المركزة الشاملة | اللغة العربية</h1>
+        <p>طريق الطموحين والطموحات والأوائل لعام 2026</p>
+        <div class="dedication">✨ مع تمنياتي لـ مَرام بالدرجة الكاملة والتفوق الباهر ✨</div>
+    </header>
+
+    <main>
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('tab1')">الاستفهام</button>
+            <button class="tab-btn" onclick="switchTab('tab2')">النفي</button>
+            <button class="tab-btn" onclick="switchTab('tab3')">التقديم والتوكيد</button>
+            <button class="tab-btn" onclick="switchTab('tab4')">الأنماط الوزارية</button>
+        </nav>
+
+        <!-- الاستفهام -->
+        <section id="tab1" class="content-section active">
+            <h2>أسلوب الاستفهام (الهمزة وهل)</h2>
+            <div class="card">
+                <span class="badge">أنواع الاستفهام من حيث الجواب</span>
+                <div class="grid-2">
+                    <div class="info-box">
+                        <strong>تصديقي:</strong> يُجاب عنه بإثبات النسبة أو نفيها بحرف جواب (نعم، بلى، أجل، لا، كلا). أدواته: (هل، والهمزة دون أم).
+                    </div>
+                    <div class="info-box">
+                        <strong>تصوري:</strong> يُجاب عنه بإدراك المفرد (التعيين). أدواته: (أسماء الاستفهام، والهمزة المتصلة بأم المعادلة).
+                    </div>
+                </div>
+            </div>
+
+            <h2>أهم الفروق والمميزات بين (أ) و (هل)</h2>
+            <div class="card">
+                <ul>
+                    <li>ترد <strong>الهمزة</strong> في الاستفهام التصديقي والتصوري، أما <strong>هل</strong> فللتصديقي فقط.</li>
+                    <li>تدخل <strong>الهمزة</strong> على الجمل المثبتة والمنفية، بينما <strong>هل</strong> تدخل على المثبتة فقط.</li>
+                    <li>لـ <strong>الهمزة</strong> الصدارة في الكلام (تسبق أحرف العطف: الفاء، الواو، ثم)، أما <strong>هل</strong> فتأتي بعدها.</li>
+                    <li>تُحذف <strong>الهمزة</strong> تخفيفاً جوازاً، بينما <strong>هل</strong> لا تُحذف أبداً.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- النفي -->
+        <section id="tab2" class="content-section">
+            <h2>أدوات النفي ومخططاتها التفصيلية</h2>
+            <div class="card">
+                <span class="badge">ليس</span>
+                <p>فعل ماض ناقص جامد يفيد النفي، يرفع المبتدأ وينصب الخبر.</p>
+                <div class="info-box"><strong>الأثر المعنوي:</strong> نفي اتصاف اسمها بخبرها.</div>
+                <div class="info-box"><strong>توكيد جمرتها:</strong> يُؤكد خبرها بالباء الزائدة إذا كان مفرداً (مجرور لفظاً منصوب محلاً).</div>
+            </div>
+
+            <div class="card">
+                <span class="badge">لات</span>
+                <p>حرف نفي يعمل عمل ليس بشرطين:</p>
+                <ul>
+                    <li>أن يكون اسمها وخبرها من ألفاظ الزمان (ساعة، وقت، حين).</li>
+                    <li>أن يُحذف أحد معموليها والغالب حذف الاسم وإبقاء الخبر.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <span class="badge">لم، لما، لن</span>
+                <div class="info-box"><strong>لم:</strong> جزم ونفي وقلب لدلالة المضارع إلى الماضي المنقطع (النفي غير متوقع).</div>
+                <div class="info-box"><strong>لما:</strong> جزم ونفي وقلب لدلالة المضارع إلى الماضي المتصل بالحاضر (النفي متوقع الحصول).</div>
+                <div class="info-box"><strong>لن:</strong> نصب ونفي دلالة المضارع في المستقبل نفياً مؤكداً بلا قرينة.</div>
+            </div>
+        </section>
+
+        <!-- التقديم والتوكيد -->
+        <section id="tab3" class="content-section">
+            <h2>تقديم الخبر على المبتدأ (وجوباً)</h2>
+            <div class="card">
+                <ul>
+                    <li>إذا كان الخبر من الألفاظ التي لها الصدارة في الكلام (أسماء الاستفهام الدالة على الزمان والمكان والحال) تلاها معرفة.</li>
+                    <li>إذا كان في المبتدأ ضمير (الهاء) يعود على بعض الخبر.</li>
+                    <li>إذا كان الخبر شبه جملة والمبتدأ نكرة غير مخصصة (لا مضافة ولا موصوفة).</li>
+                    <li>إذا كان الخبر مقصوراً على المبتدأ (بإنما أو النفي والاستثناء المفرغ).</li>
+                </ul>
+            </div>
+
+            <h2>أسلوب التوكيد</h2>
+            <div class="card">
+                <span class="badge accent">طرائق التوكيد</span>
+                <p><strong>التوكيد اللفظي:</strong> بتكرار اللفظ (اسم، فعل، حرف، جملة، ضمير).</p>
+                <p><strong>التوكيد المعنوي:</strong> بألفاظ (نفس، عين، كلا، كلتا، كل، جميع) مضافة إلى ضمير يطابق المؤكد.</p>
+                <p><strong>التوكيد بالحروف الزائدة:</strong> (الباء، من، لا، ما، إن، الكاف) حسب شروطها النحوية.</p>
+            </div>
+        </section>
+
+        <!-- الأنماط الوزارية -->
+        <section id="tab4" class="content-section">
+            <h2>الأجوبة النموذجية للأنماط الذهبية الشاملة (2026)</h2>
+            
+            <div class="card">
+                <div class="question">س: لا تصحب الكسلان في حاجاته.. قدم المفعول به متأخر لفظاً ورتبة وجوباً بالطرق الممكنة؟</div>
+                <div class="answer">ج: <strong>أما الكسلانَ فلا تصحبْ</strong> أو <strong>الكسلانَ فأصحبْ</strong>.</div>
+                
+                <div class="question">س: أعرب اسم الاستفهام معللاً: "وكيف تعلك الدنيا بشيء"؟</div>
+                <div class="answer">ج: <strong>كيف:</strong> اسم استفهام مبني على الفتح في محل نصب حال. السبب: تلاه فعل تام (تعلك).</div>
+
+                <div class="question">س: ما الأثر المعنوي لأداة النفي في: (لا شلت يدك)؟</div>
+                <div class="answer">ج: نفي زمن المستقبل، وتفيد الدعاء.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        صُنع بحب ومؤازرة لرحلة مرام الدراسية ✍️ 2026
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // إخفاء كل الأقسام
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // إزالة التفعيل من الأزرار
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // إظهار القسم المختار وتفعيل زره
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+            
+            // اهتزاز خفيف للموبايل عند التنقل (إن كان مدعوماً)
+            if (navigator.vibrate) {
+                navigator.vibrate(15);
+            }
+        }
+    </script>
+</body>
+</html>
